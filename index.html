@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>How to create a personal github site</title>
+    </head>
+    <body>
+        <h1>How to create a personal github site</h1>
+        <p>You can create a simple personal site on github by only creating a repository.</p>
+        <ol>
+            <li>
+                <p>First things first, create your github account, if you already have one, you can skip this step. Navigate to <a href="https://github.com" target="_blank">https://github.com</a> and click on "Sing up" at the upper right side of page. You should see something like this:</p>
+                <img src="sing_up.png"/>
+                <p>Fill all the required information and click on "Create account"</p> 
+            </li>
+            <li>
+                <p>Now you have an account, you can create a repository. Again in the upper right side of the page, you will find a plus sing,that allows you to add many things, one of them is a new repository. Click on "New repository"</p>
+                <img src="create_repository.png"/>
+                <p>Now you will se a page like this:</p>
+                <img src="create_a_repository.png"/>
+                <p>Make sure you fill up the form with the right information:</p>
+                <ul>
+                    <li>Repository name must be <strong><i>your_user_name</i>.github.io</strong> (replace italics with your actual github user name) </li>
+                    <li>Repository shluld be marked as <strong>Public</strong></li>
+                </ul>
+            </li>
+            <li>
+                <p>In your local computer, you should create a simple html file named <strong>index.html</strong>. Its preferible you create this file in a new folder, where you will have all resources of your webpage.</p>
+                <p>here is an exaple of a index.html file</p>
+                <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+		    &lt;html&gt;
+                      &lt;head&gt;
+                        &lt;title&gt;laertida&lt;/title&gt;
+                      &lt;/head&gt;
+                      &lt;body&gt;
+                        &lt;h1&gt;My personal protafolio:&lt;/h1&gt;
+                        &lt;p&gt;Here are some pages I've created:&lt;/p&gt;
+                        &lt;ul&gt;
+                          &lt;li&gt;&lt;a href="./how_to_create_a_github_page.html"&gt;How to create a personal github site.&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/body&gt;
+		    &lt;html&gt;
+                </code>
+                </pre>
+            </li>
+            <li>
+                <p>Now in your terminal, go to the directory where you created the file and init a git repository by typing</p>
+                <code>git init</code>
+                <p>Now you have to add to your stagging area the created repository.</p>
+                <code>git add index.html</code>
+                <p>Next you have o commit your changes, adding a message.</p>
+                <code>git commit -m "index.html file added"</code>
+                <p>Its time to reference to your remote repository created in github. (Of course you have to replace the link for the one in your repository)</p>
+                <code>git remote add origin https://github.com/laertida/laertida.github.io.git</code>
+                <p>Now it's time to publish the changes by typing:</p>
+                <code>git push origin master</code>
+                <p>Your github user and password will be asked, type them and you will see a confirmation message.</p>
+            </li>
+	    
+        </ol>
+    </body>
+    
+        
+</html>
