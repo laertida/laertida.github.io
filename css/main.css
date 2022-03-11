@@ -1,62 +1,25 @@
-body[dark-mode] {
-    background-color: #222;
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+body {
+    font-family: 'Roboto Slab' , serif;
 }
 
-body[dark-mode] .card{
-    color: white;
-    background-color: #222;
-    border: 1px solid gray;
-}
-/** darking images **/
-
-body[dark-mode] img {
-    opacity: 0.85;
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
-body[dark-mode] .bg-primary{
-    background-color: #0C8C8C !important;
-}
-
-#light-changer:hover {
-     color: orange;
-}
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-.circle {
-    border-radius: 50%;
-}
-
-.profile {
-    max-width: 8.5rem;
-}
-
-a.contact {
-    text-decoration: none !important;
-    font-size: 1.3rem;
+h1 {
+    text-align: center;
+    font-family: 'Roboto Slab' , serif;
+    font-weight: 500;
+    font-size: 2.5625rem;
+    grid-column: 1/4
 }
 
 
-
-/**video {
-    width: 100% !important;
-    height: auto !important;
-}***/
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-	font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 767.98x){
-    img.profile {
-	max-width: 30% !important;
-    }
+p {
+    font-weight: 300;
+    font-size: 1.25rem;
+    grid-column: 2 / 3;
 }
 
