@@ -3,5 +3,5 @@
 #+EXPORT_FILE_NAME: ../index.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/main.css" />
 
-Este es una botella con un mensaje dentro, en este mar llamado internet. 
+Esta es una botella con un mensaje dentro, en este mar llamado internet. 
 
