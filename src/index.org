@@ -1,7 +1,7 @@
 #+TITLE: ¡Hola, mundo!
-#+OPTIONS: html-style:nil html-scripts:nil html-postamble:nil author:nil toc:nil
+#+OPTIONS: html-style:nil html-scripts:nil html-postamble:nil toc:nil author:laertida
 #+EXPORT_FILE_NAME: ../index.html
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./css/main.css" />
 
-Esta es una botella con un mensaje dentro, en este mar llamado internet. 
 
+Esta es una botella con un mensaje dentro, en este mar llamado internet.
