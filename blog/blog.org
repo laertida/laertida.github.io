@@ -1,6 +1,6 @@
 #+TITLE: Blog minimalista
 #+OPTIONS:  html-postamble:nil toc:nil author:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
-¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera.
+¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple página donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera.
 
-Este es un intento de quitar todas esas complicaciones y volver a lo básico: Texto plano
+Este es un intento de quitar todas esas complicaciones y volver a lo básico: *Texto plano*
