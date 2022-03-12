@@ -1,0 +1,10 @@
+#+TITLE: ¡Hola, mundo!
+#+OPTIONSO: html-style:nil html-scripts:nil html-postamble:nil toc:nil author:laertida
+#+OPTIONS:  html-postamble:nil toc:nil author:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+Esta es una botella con un mensaje dentro, en este mar llamado internet.
+
+
+* Contenido reciente
+** [[file:blog/blog.org][Blog minimalista]]
