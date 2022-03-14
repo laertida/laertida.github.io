@@ -31,8 +31,11 @@ span[class^='section-number']{
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
 
-    h1 {
+    body {
         width: calc(100% - 40px);
+    }
+    h1 {
+
     }
 
     p {
