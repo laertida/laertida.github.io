@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-13 dom 21:29 -->
+<!-- 2022-03-13 dom 21:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Un blog minimalista</title>
+<title>¡Hola, mundo!</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -196,61 +196,18 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Un blog minimalista</h1>
+<h1 class="title">¡Hola, mundo!</h1>
 <p>
-¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple página donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera. 
+Esta es una botella con un mensaje dentro, en este mar llamado internet.
 </p>
 
-<p>
-Es cierto que siempre has podido hacer una página simple, pero ¿quién en su sano juicio escribe HTML puro?, ni que estuviésemos en la época de las cavernas.
-</p>
 
-<p>
-Este es un intento de quitar todas esas complicaciones y volver a lo básico: <b>Texto plano</b>
-</p>
-
-<div id="outline-container-orgfbddaeb" class="outline-2">
-<h2 id="orgfbddaeb"><span class="section-number-2">1.</span> La idea</h2>
+<div id="outline-container-org24a557f" class="outline-2">
+<h2 id="org24a557f"><span class="section-number-2">1.</span> ¿Qué leer?</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-Hace ya algo de tiempo que conoczco EMACS, un editor de texto que tiene implementado algo llamado <i>org-mode</i>.
-</p>
-
-<p>
-Emacs es muy conocido por ser uno de los editores de texto más viejos que se siguen usado y que además fue creado por el mismo Richard Stallman, el creador de la Free Software Foundation y las licencias GPL. 
-</p>
-
-<p>
-Org-mode es uno de los modos en los que puedes usar emacs. Te permite organizar y darle seguimiento a tus tareas. Llevar tu agenda, registrar el tiempo que te lleva realizar cada tarea y hasta generar una tabla con un informe de cuánto tiempo has invertido en cada una de ellas.
-</p>
-
-<p>
-En fin, otra de las grandes virtudes de org mode es que puedes exportar un documento a múltiples formatos: Latex, PDF, Markdown y&#x2026; <b>¡HTML!</b>
-</p>
-
-<p>
-La idea detrás de org-mode es que siempre escribimos texto estructurado y jerarquizado. Si lo piensas un poco, te darás cuenta que esto casi siempre se cumple e incluso e difícil pensar en contraejemplos. Si tienes el texto estructurado y el formato de un archivo es otra estructura; el proceso de exportar un archivo para org mode es tan simple como pasar un archivo de una estructura a otra. 
-</p>
 </div>
-</div>
-
-<div id="outline-container-org49d30bb" class="outline-2">
-<h2 id="org49d30bb"><span class="section-number-2">2.</span> La práctica</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Primero lo primero: <b>instala emacs</b>. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-org56032d1" class="outline-2">
-<h2 id="org56032d1"><span class="section-number-2">3.</span> Otros recursos</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
-</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SzA2YODtgK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div id="outline-container-orgea73c45" class="outline-3">
+<h3 id="orgea73c45"><span class="section-number-3">1.1.</span> <a href="blog/blog.html">Un blog minimalista</a></h3>
 </div>
 </div>
 </div>

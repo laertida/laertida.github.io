@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
 body {
     font-family: 'Roboto Slab' , serif;
+    width: 600px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .content {
@@ -11,23 +16,18 @@ h1 {
     font-weight: 500;
     font-size: 2.5625rem;
     line-height: 2.8125rem;
-    width: 600px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
 
 p {
     font-weight: 300;
     font-size: 1.25rem;
     line-height: 1.875rem;
-    width: 600px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-
+span[class^='section-number']{
+    display:none;
+}
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
 

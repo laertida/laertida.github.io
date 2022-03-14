@@ -1,6 +1,30 @@
-#+TITLE: Blog minimalista
+#+TITLE: Un blog minimalista
 #+OPTIONS:  html-postamble:nil toc:nil author:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
-¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple página donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera.
+
+¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple página donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera. 
+
+Es cierto que siempre has podido hacer una página simple, pero ¿quién en su sano juicio escribe HTML puro?, ni que estuviésemos en la época de las cavernas.
 
 Este es un intento de quitar todas esas complicaciones y volver a lo básico: *Texto plano*
+
+* La idea
+Hace ya algo de tiempo que conoczco EMACS, un editor de texto que tiene implementado algo llamado /org-mode/.
+
+Emacs es muy conocido por ser uno de los editores de texto más viejos que se siguen usado y que además fue creado por el mismo Richard Stallman, el creador de la Free Software Foundation y las licencias GPL. 
+
+Org-mode es uno de los modos en los que puedes usar emacs. Te permite organizar y darle seguimiento a tus tareas. Llevar tu agenda, registrar el tiempo que te lleva realizar cada tarea y hasta generar una tabla con un informe de cuánto tiempo has invertido en cada una de ellas.
+
+En fin, otra de las grandes virtudes de org mode es que puedes exportar un documento a múltiples formatos: Latex, PDF, Markdown y... *¡HTML!*
+
+La idea detrás de org-mode es que siempre escribimos texto estructurado y jerarquizado. Si lo piensas un poco, te darás cuenta que esto casi siempre se cumple e incluso e difícil pensar en contraejemplos. Si tienes el texto estructurado y el formato de un archivo es otra estructura; el proceso de exportar un archivo para org mode es tan simple como pasar un archivo de una estructura a otra. 
+
+* La práctica
+Primero lo primero: *instala emacs*. 
+
+* Otros recursos
+Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
+
+#+BEGIN_EXPORT html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SzA2YODtgK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+#+END_EXPORT

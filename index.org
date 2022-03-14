@@ -6,5 +6,5 @@
 Esta es una botella con un mensaje dentro, en este mar llamado internet.
 
 
-* Contenido reciente
-** [[file:blog/blog.org][Blog minimalista]]
+* ¿Qué leer?
+** [[file:blog/blog.org][Un blog minimalista]]
