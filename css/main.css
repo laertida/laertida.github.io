@@ -28,6 +28,21 @@ p {
 span[class^='section-number']{
     display:none;
 }
+
+.video-responsive {
+	  height: 0;
+	  overflow: hidden;
+	  padding-bottom: 56.25%;
+	  padding-top: 30px;
+	  position: relative;
+}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	  height: 100%;
+	  left: 0;
+	  position: absolute;
+	  top: 0;
+	  width: 100%;
+}
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
 

@@ -19,12 +19,20 @@ En fin, otra de las grandes virtudes de org mode es que puedes exportar un docum
 
 La idea detrás de org-mode es que siempre escribimos texto estructurado y jerarquizado. Si lo piensas un poco, te darás cuenta que esto casi siempre se cumple e incluso e difícil pensar en contraejemplos. Si tienes el texto estructurado y el formato de un archivo es otra estructura; el proceso de exportar un archivo para org mode es tan simple como pasar un archivo de una estructura a otra. 
 
+Utilizaremos este principio para exportar archivos org a archivos html y construir nuestro blog. 
 * La práctica
-Primero lo primero: *instala emacs*. 
+Primero lo primero: *instala emacs*. Dependiendo de tu sistema operativo o distribución, las instrucciones son diferentes. Así que lo mejor será que gogglees las instrucciones de instalación.
+
+Te recomiendo enormemente que, cuando agarres confianza, lo compiles; funciona mucho más rápido de esta forma.
+
+En fin, una vez instalado podrás crear tu primer archivo de tipo org. Emacs tiene implementado esto por default así que si quieres activar este modo únicamente tienes que abrir o crear un buffer con la extensión /.org/. 
 
 * Otros recursos
 Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
 
+
 #+BEGIN_EXPORT html
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SzA2YODtgK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-responsive">
+<iframe src="https://www.youtube.com/embed/SzA2YODtgK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 #+END_EXPORT
