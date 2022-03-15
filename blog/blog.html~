@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-14 lun 23:08 -->
+<!-- 2022-03-14 lun 23:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Un blog minimalista</title>
@@ -209,8 +209,8 @@ Es cierto que siempre has podido hacer una página simple, pero ¿quién en su s
 Este es un intento de quitar todas esas complicaciones y volver a lo básico: <b>Texto plano</b>
 </p>
 
-<div id="outline-container-org1ffe741" class="outline-2">
-<h2 id="org1ffe741"><span class="section-number-2">1.</span> La idea</h2>
+<div id="outline-container-org979aae6" class="outline-2">
+<h2 id="org979aae6"><span class="section-number-2">1.</span> La idea</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Hace ya algo de tiempo que conoczco EMACS, un editor de texto que tiene implementado algo llamado <i>org-mode</i>.
@@ -237,8 +237,8 @@ Utilizaremos este principio para exportar archivos org a archivos html y constru
 </p>
 </div>
 </div>
-<div id="outline-container-org9138e2e" class="outline-2">
-<h2 id="org9138e2e"><span class="section-number-2">2.</span> La práctica</h2>
+<div id="outline-container-orgdb48604" class="outline-2">
+<h2 id="orgdb48604"><span class="section-number-2">2.</span> La práctica</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Primero lo primero: <b>instala emacs</b>. Dependiendo de tu sistema operativo o distribución, las instrucciones son diferentes. Así que lo mejor será que gogglees las instrucciones de instalación.
@@ -256,13 +256,13 @@ En fin, una vez instalado podrás crear tu primer archivo de tipo org. Emacs tie
 Para este tutorial, vamos a crear un archivo llamado ejemplo.org; lo primero que querrás hacer es darle título a tu buffer y añadir algo de texto como a continuación:
 </p>
 <div class="org-src-container">
-<pre class="src src-org">#+TITLE: Un título de ejemplo
+<pre class="src src-org"><span style="color: #9f8766;">#+TITLE:</span> <span style="color: #bc6ec5; font-size: 140%; font-weight: bold; text-decoration: underline;">Un t&#237;tulo de ejemplo</span>
 
 Este es un texto de ejemplo para exportarse en org-mode
 
-* Este es un cabecero de primer nivel
+<span style="color: #4f97d7; font-size: 130%; font-weight: bold;">*</span><span style="color: #4f97d7; font-size: 130%; font-weight: bold;"> Este es un cabecero de primer nivel</span>
 Algo de texto para disimular.
-** Este es un cabecero de segundo nivel
+<span style="color: #bebebe; background-color: #292b2e;">*</span><span style="color: #2d9574; font-size: 120%; font-weight: bold;">*</span><span style="color: #2d9574; font-size: 120%; font-weight: bold;"> Este es un cabecero de segundo nivel</span>
   1. Esta es una lista ordenada
   2. Esta es otra lista ordenada
 </pre>
@@ -271,7 +271,7 @@ Algo de texto para disimular.
 <p>
 A partir de aquí, podemos exportar este archivo org a un html, lo único que debemos hacer es presionar<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
-<pre class="example" id="orge51092b">
+<pre class="example" id="orgd27befc">
 C-c  C-e 
 </pre>
 
@@ -297,8 +297,8 @@ Añadamos un poco de estilos. Para ello he trabajado en una simple hoja de estil
 
 
 
-<div id="outline-container-orga672bf0" class="outline-2">
-<h2 id="orga672bf0"><span class="section-number-2">3.</span> Otros recursos</h2>
+<div id="outline-container-org59d0624" class="outline-2">
+<h2 id="org59d0624"><span class="section-number-2">3.</span> Otros recursos</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:

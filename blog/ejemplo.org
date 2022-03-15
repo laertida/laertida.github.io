@@ -1,0 +1,9 @@
+#+TITLE: Un título de ejemplo
+
+Este es un texto de ejemplo para exportarse en org-mode
+
+* Este es un cabecero de primer nivel
+Algo de texto para disimular.
+** Este es un cabecero de segundo nivel
+1. Esta es una lista ordenada
+2. Esta es otra lista ordenada

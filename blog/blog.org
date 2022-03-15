@@ -17,7 +17,7 @@ Org-mode es uno de los modos en los que puedes usar emacs. Te permite organizar 
 
 En fin, otra de las grandes virtudes de org mode es que puedes exportar un documento a múltiples formatos: Latex, PDF, Markdown y... *¡HTML!*
 
-La idea detrás de org-mode es que siempre escribimos texto estructurado y jerarquizado. Si lo piensas un poco, te darás cuenta que esto casi siempre se cumple e incluso e difícil pensar en contraejemplos. Si tienes el texto estructurado y el formato de un archivo es otra estructura; el proceso de exportar un archivo para org mode es tan simple como pasar un archivo de una estructura a otra. 
+La idea detrás de org-mode es que siempre escribimos texto estructurado y jerarquizado. Si lo piensas un poco, te darás cuenta que esto casi siempre se cumple e incluso es difícil pensar en contraejemplos. Si tienes el texto estructurado y el formato de un archivo es otra estructura; el proceso de exportar un archivo para org mode es tan simple como pasar un archivo de una estructura a otra. 
 
 Utilizaremos este principio para exportar archivos org a archivos html y construir nuestro blog. 
 * La práctica
@@ -26,6 +26,36 @@ Primero lo primero: *instala emacs*. Dependiendo de tu sistema operativo o distr
 Te recomiendo enormemente que, cuando agarres confianza, lo compiles; funciona mucho más rápido de esta forma.
 
 En fin, una vez instalado podrás crear tu primer archivo de tipo org. Emacs tiene implementado esto por default así que si quieres activar este modo únicamente tienes que abrir o crear un buffer con la extensión /.org/. 
+
+Para este tutorial, vamos a crear un archivo llamado ejemplo.org; lo primero que querrás hacer es darle título a tu buffer y añadir algo de texto como a continuación:
+#+BEGIN_SRC org
+  ,#+TITLE: Un título de ejemplo
+
+  Este es un texto de ejemplo para exportarse en org-mode
+
+  ,* Este es un cabecero de primer nivel
+  Algo de texto para disimular.
+  ,** Este es un cabecero de segundo nivel
+    1. Esta es una lista ordenada
+    2. Esta es otra lista ordenada
+#+END_SRC
+
+A partir de aquí, podemos exportar este archivo org a un html, lo único que debemos hacer es presionar[fn:1]
+#+BEGIN_EXAMPLE
+C-c  C-e 
+#+END_EXAMPLE
+
+Te aparecerá un menú en el cuál puedes escoger hacia qué formato exportar, escogeremos el de html con la tecla h, y presionaremos otra vez h para que la salida de este /export/ se escriba a un archivo.
+
+Una vez ejecutado lo anterior, podrás encontrar un archivo llamado ejemplo.html que se verá como [[file:ejemplo.org][éste]].
+
+Pero esta salida esta un poco.... digamos... rúistica.
+
+Añadamos un poco de estilos. Para ello he trabajado en una simple hoja de estilos fuertemente inspirada en los estilos del *New York Times*. Puedes obtenerla [[https://raw.githubusercontent.com/laertida/laertida.github.io/main/css/main.css][aquí]].
+
+
+
+
 
 * Otros recursos
 Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
@@ -36,3 +66,7 @@ Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
 <iframe src="https://www.youtube.com/embed/SzA2YODtgK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 #+END_EXPORT
+
+* Footnotes
+
+[fn:1] La letra C (mayúscula) indica la tecla Ctrl. Se usa C en toda la documentación de emacs y de org mode porque es una tecla que puede configurarse a cualquier otra que quieras. 
