@@ -1,0 +1,138 @@
+#+TITLE: Deployando airflow en kubernetes con helm, usando un clúster eks en amazon e imágenes de airflow personalizadas
+#+LANGUAGE: es
+#+OPTIONS:  html-postamble:nil toc:nil author:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+Prerrequisitos:
+
+- Tener un clúster eks funcionando en amazon. Si no lo tienes puedes consultar la guía ¿Cómo crear la infraesturctura para un clúster eks? [TBW]
+  * El clúster eks debe estar configurado con TLS termination con nginx.
+  * Los nodos del clúster tienen por default asignados el rol para acceder al repositorio ecr.
+- Contar con un repositorio ECR donde tus imágenes se darán de alta.
+- Tener instaladas y configuradas las herramientas docker, kubectl y helm
+
+* Obteniendo los charts fuente
+
+Airflow liberó hace tiempo los charts oficiales para el deployment de airflow. De acuerdo a la documentación oficial tendremos que añadir el repositorio y posteriormente descargar los archivos fuete con helm pull.
+
+#+BEGIN_SRC bash
+  helm repo add apache-airflow https://airflow.apache.org
+  helm pull apache-airflow/airflow
+#+END_SRC
+
+Haciendo lo anterior ya tendremos los yamls fuente comprimidos en un archivo tar llamado *airflow-{version-de-chart}.tgz*
+
+Los descomprimimos usando el comando tar
+
+#+BEGIN_SRC bash
+tar xvf airlow-1.5.0.tgz
+#+END_SRC
+
+Y ahora sí tendremos las plantillas yaml para modificarlas e implementarlas con helm.
+
+/A partir de ahora, este tutorial está realizado tomando como base las plantillas para airflow en la versión *1.5.0*/
+
+*  Modificando los charts para hacer un deploy personalizado
+
+A menos que tu deployment sea muy complejo, el único lugar donde haremos las modificaciones será el archivo values.yaml.
+
+** Configurando la imagen de airflow
+
+Airflow realiza varias actividades antes de estar listo como correr migraciones y en algunas ocasiones tu imagen personalizada de airflow puede entrar en conflico  con estas tareas. Así que a pesar de que puedes configurar una imagen para todo el deployment, modificando la variable /defaultAirflowRepository/, te recomiendo que únicamente modifiques la imagen de airflow para la imagen base y actives configures /useDefaultImageForMigration/. Esto permitirá usar la imagen base de airflow para correr las migraciones y no la tuya, librandote de errores en esta fase del deployment
+
+Tu archivo se verá más o menos así:
+
+#+BEGIN_SRC yaml
+images:
+  airflow:
+    repository: algún-repositorio-ecr.dkr.ecr.us-east-2.amazonaws.com/airflow
+    tag: algun-tag-personalizado
+    pullPolicy: IfNotPresent
+  # To avoid images with user code, you can turn this to 'true' and
+  # all the 'run-airflow-migrations' and 'wait-for-airflow-migrations' containers/jobs
+  # will use the images from 'defaultAirflowRepository:defaultAirflowTag' values
+  # to run and wait for DB migrations .
+  useDefaultImageForMigration: true
+  
+#+END_SRC
+
+** Configurando el ingress
+Otra cosa  que querrás hacer es habilitar el ingress, esto lo haces configurando el valor true, en la sección correspondiente.
+
+También puedes configurar la subsección de host configurando tu dominio. 
+
+#+BEGIN_SRC yaml
+  # Ingress configuration
+  ingress:
+  # Enable ingress resource
+  enabled: true
+      ...
+        web:
+        ...
+        host: "airflow.algundominio.com/"
+#+END_SRC
+
+En tus entradas de dns deberás crear un registro de tipo CNAME apuntando al ingress que se genere con este deployment. Después de aplicar el deployment puedes ejecutar el comando /kubectl get ingress --namespace airflow/ para obtener el detalle.
+
+
+** Configuración para DAGs
+
+La implementación estándar de ariflow es vinculada a un repositorio. Al momento de hacer el deployment se hará un clone de una rama específica al repositorio configurado.
+
+Habilitaremos esta opción en la sección de /dags/. En mi caso, configuraré el acceso al repositorio ssh y los dags se encuentran en la raís del repositorio, así que mi yaml se ve algo así.
+
+#+BEGIN_SRC yaml
+  # Git sync
+  dags:
+    ...
+    gitSync:
+      enabled: true
+      # git repo clone url
+    repo: https://miempresa.com/repos/dags.git
+    branch: main
+    rev: HEAD
+    depth: 1
+    ...
+    subPath: ""
+    ...
+    sshKeySecret: airflow-ssh-secret
+#+END_SRC
+
+La variable /sshKeySecret/ indica el nombre del secreto en el cual se guarda la llave ssh. Tenemos que crear ese secreto en el cluster. Como los charts son justo para definir todo lo necesario para nuestro deployment, podemos crear un archivo yaml en airflow/templates/secrets/aifrlow-ssh-secret.yaml. El archivo se verá más o menos así:
+
+#+BEGIN_SRC yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: airflow-ssh-secret
+data:
+  gitSshKey: "cadena-de-llave-reemplazando-interlineado-por-\n"
+#+END_SRC
+
+** Configuración para logging en S3
+
+En esta versión de charts, los logs para S3 se configuran mediante variables de entorno, para ello existe una sección en el archivo de values,
+
+#+BEGIN_SRC yaml
+# Environment variables for all airflow containers
+env:
+# - name: ""
+#   value: ""
+  - name: "AIRFLOW__CORE__REMOTE_LOGGING"
+    value: "True"
+  - name: "AIRFLOW__CORE__REMOTE_BASE_LOG_FOLDER"
+    value: "s3://alguna-bucket-para-airflow-logs"
+  - name: "AIRFLOW__CORE__REMOTE_LOG_CONN_ID"
+    value: "aws_s3"
+#+END_SRC
+
+El valor de la variable AIRFLOW__CORE__REMOTE_LOG_CONN_ID debe corresponder con una conexión dada de alta en la consola de airflow; en este ejemplo tendría que existir una conexión con el id /aws_s3/
+
+* Aplicar deployment
+
+Una vez configuradas todos los valores para el deplyment podrás realizarlo de la siguiente manera:
+
+#+BEGIN_SRC bash
+helm upgrade --install airflow ./airflow --namespace airflow --create-namespace
+#+END_SRC
+
