@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2022-03-22 mar 14:25 -->
+<!-- 2022-03-22 mar 18:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Deployando airflow en kubernetes con helm, usando un clúster eks en amazon e imágenes de airflow personalizadas</title>
@@ -197,10 +197,19 @@
 <body>
 <div id="content" class="content">
 <h1 class="title">Deployando airflow en kubernetes con helm, usando un clúster eks en amazon e imágenes de airflow personalizadas</h1>
-<p>
-Prerrequisitos:
-</p>
 
+<div id="outline-container-org4935b43" class="outline-2">
+<h2 id="org4935b43"><span class="section-number-2">1.</span> Acerca de</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+El objetivo de este documento es mostrar las secciones clave que hay que modificar para tener un deploy productivo mínimo para airflow. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0889649" class="outline-2">
+<h2 id="org0889649"><span class="section-number-2">2.</span> Prerrequisitos</h2>
+<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Tener un clúster eks funcionando en amazon. Si no lo tienes puedes consultar la guía ¿Cómo crear la infraesturctura para un clúster eks? [TBW]
 <ul class="org-ul">
@@ -210,10 +219,12 @@ Prerrequisitos:
 <li>Contar con un repositorio ECR donde tus imágenes se darán de alta.</li>
 <li>Tener instaladas y configuradas las herramientas docker, kubectl y helm</li>
 </ul>
+</div>
+</div>
 
-<div id="outline-container-org41e3a50" class="outline-2">
-<h2 id="org41e3a50"><span class="section-number-2">1.</span> Obteniendo los charts fuente</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgdcea5d8" class="outline-2">
+<h2 id="orgdcea5d8"><span class="section-number-2">3.</span> Obteniendo los charts fuente</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Airflow liberó hace tiempo los charts oficiales para el deployment de airflow. De acuerdo a la documentación oficial tendremos que añadir el repositorio y posteriormente descargar los archivos fuete con helm pull.
 </p>
@@ -247,17 +258,17 @@ Y ahora sí tendremos las plantillas yaml para modificarlas e implementarlas con
 </div>
 </div>
 
-<div id="outline-container-orge833cd7" class="outline-2">
-<h2 id="orge833cd7"><span class="section-number-2">2.</span> Modificando los charts para hacer un deploy personalizado</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgd9d5f6d" class="outline-2">
+<h2 id="orgd9d5f6d"><span class="section-number-2">4.</span> Modificando los charts para hacer un deploy personalizado</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 A menos que tu deployment sea muy complejo, el único lugar donde haremos las modificaciones será el archivo values.yaml.
 </p>
 </div>
 
-<div id="outline-container-orgfe69f87" class="outline-3">
-<h3 id="orgfe69f87"><span class="section-number-3">2.1.</span> Configurando la imagen de airflow</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org29ea62f" class="outline-3">
+<h3 id="org29ea62f"><span class="section-number-3">4.1.</span> Configurando la imagen de airflow</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Airflow realiza varias actividades antes de estar listo como correr migraciones y en algunas ocasiones tu imagen personalizada de airflow puede entrar en conflico  con estas tareas. Así que a pesar de que puedes configurar una imagen para todo el deployment, modificando la variable <i>defaultAirflowRepository</i>, te recomiendo que únicamente modifiques la imagen de airflow para la imagen base y actives configures <i>useDefaultImageForMigration</i>. Esto permitirá usar la imagen base de airflow para correr las migraciones y no la tuya, librandote de errores en esta fase del deployment
 </p>
@@ -283,9 +294,9 @@ Tu archivo se verá más o menos así:
 </div>
 </div>
 
-<div id="outline-container-org7328ed4" class="outline-3">
-<h3 id="org7328ed4"><span class="section-number-3">2.2.</span> Configurando el ingress</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orge7dd875" class="outline-3">
+<h3 id="orge7dd875"><span class="section-number-3">4.2.</span> Configurando el ingress</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Otra cosa  que querrás hacer es habilitar el ingress, esto lo haces configurando el valor true, en la sección correspondiente.
 </p>
@@ -313,9 +324,9 @@ En tus entradas de dns deberás crear un registro de tipo CNAME apuntando al ing
 </div>
 
 
-<div id="outline-container-orgd2c73af" class="outline-3">
-<h3 id="orgd2c73af"><span class="section-number-3">2.3.</span> Configuración para DAGs</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org731864a" class="outline-3">
+<h3 id="org731864a"><span class="section-number-3">4.3.</span> Configuración para DAGs</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 La implementación estándar de ariflow es vinculada a un repositorio. Al momento de hacer el deployment se hará un clone de una rama específica al repositorio configurado.
 </p>
@@ -358,9 +369,9 @@ La variable <i>sshKeySecret</i> indica el nombre del secreto en el cual se guard
 </div>
 </div>
 
-<div id="outline-container-org720581b" class="outline-3">
-<h3 id="org720581b"><span class="section-number-3">2.4.</span> Configuración para logging en S3</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-org2b9f95d" class="outline-3">
+<h3 id="org2b9f95d"><span class="section-number-3">4.4.</span> Configuración para logging en S3</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 En esta versión de charts, los logs para S3 se configuran mediante variables de entorno, para ello existe una sección en el archivo de values,
 </p>
@@ -384,11 +395,53 @@ El valor de la variable AIRFLOW_<sub>CORE</sub>_<sub>REMOTE</sub><sub>LOG</sub><
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgabcefd5" class="outline-3">
+<h3 id="orgabcefd5"><span class="section-number-3">4.5.</span> Configurar Postgres</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+En el chart por default, la base de datos que con la que funciona airflow está dentro de un contenedor, el dejarlo así no está recomendado para producción, así que deshabilitaremos esta opción, modificando esta sección
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Configuration for postgresql subchart</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Not recommended for production</span>
+<span style="color: #7590db;">postgresql</span>:
+  <span style="color: #7590db;">enabled</span>: <span style="color: #a45bad;">false</span>
+  ...
+</pre>
 </div>
 
-<div id="outline-container-org7e7cdfc" class="outline-2">
-<h2 id="org7e7cdfc"><span class="section-number-2">3.</span> Aplicar deployment</h2>
-<div class="outline-text-2" id="text-3">
+<p>
+Para configurar la nueva base de datos tenemos dos opciones, configurar la conexión en directamente en el archivo values.yaml o bien crear un secret de kubernetes para guardar estos valores. Vamos a optar por crear un secreto con los valores de la conexión
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">kubectl create secret generic database-secret --from-literal=<span style="color: #7590db;">connection</span>=postgresql://user:pass@host:5432/db --namespace airflow
+</pre>
+</div>
+
+<p>
+Una vez creado, podremos configurar el valor del secret de esta manera en values.yaml
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Airflow database &amp; redis config</span>
+<span style="color: #7590db;">data</span>:
+  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">If secret names are provided, use those secrets</span>
+  <span style="color: #7590db;">metadataSecretName</span>: database-secret
+  <span style="color: #7590db;">resultBackendSecretName</span>: <span style="color: #a45bad;">~</span>
+  <span style="color: #7590db;">brokerUrlSecretName</span>: <span style="color: #a45bad;">~</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgedf5cd0" class="outline-2">
+<h2 id="orgedf5cd0"><span class="section-number-2">5.</span> Aplicar deployment</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Una vez configuradas todos los valores para el deplyment podrás realizarlo de la siguiente manera:
 </p>

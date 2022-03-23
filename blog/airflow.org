@@ -3,7 +3,10 @@
 #+OPTIONS:  html-postamble:nil toc:nil author:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
-Prerrequisitos:
+* Acerca de
+El objetivo de este documento es mostrar las secciones clave que hay que modificar para tener un deploy productivo mínimo para airflow. 
+
+* Prerrequisitos
 
 - Tener un clúster eks funcionando en amazon. Si no lo tienes puedes consultar la guía ¿Cómo crear la infraesturctura para un clúster eks? [TBW]
   * El clúster eks debe estar configurado con TLS termination con nginx.
@@ -127,6 +130,36 @@ env:
 #+END_SRC
 
 El valor de la variable AIRFLOW__CORE__REMOTE_LOG_CONN_ID debe corresponder con una conexión dada de alta en la consola de airflow; en este ejemplo tendría que existir una conexión con el id /aws_s3/
+
+** Configurar Postgres
+
+En el chart por default, la base de datos que con la que funciona airflow está dentro de un contenedor, el dejarlo así no está recomendado para producción, así que deshabilitaremos esta opción, modificando esta sección
+
+#+BEGIN_SRC yaml
+# Configuration for postgresql subchart
+# Not recommended for production
+postgresql:
+  enabled: false
+  ...
+#+END_SRC
+
+Para configurar la nueva base de datos tenemos dos opciones, configurar la conexión en directamente en el archivo values.yaml o bien crear un secret de kubernetes para guardar estos valores. Vamos a optar por crear un secreto con los valores de la conexión
+
+#+BEGIN_SRC bash
+kubectl create secret generic database-secret --from-literal=connection=postgresql://user:pass@host:5432/db --namespace airflow
+#+END_SRC
+
+Una vez creado, podremos configurar el valor del secret de esta manera en values.yaml
+
+#+BEGIN_SRC yaml
+# Airflow database & redis config
+data:
+  # If secret names are provided, use those secrets
+  metadataSecretName: database-secret
+  resultBackendSecretName: ~
+  brokerUrlSecretName: ~
+#+END_SRC
+
 
 * Aplicar deployment
 
