@@ -131,6 +131,8 @@ env:
 
 El valor de la variable AIRFLOW__CORE__REMOTE_LOG_CONN_ID debe corresponder con una conexión dada de alta en la consola de airflow; en este ejemplo tendría que existir una conexión con el id /aws_s3/
 
+** Configurar Fernet key
+
 ** Configurar Postgres
 
 En el chart por default, la base de datos que con la que funciona airflow está dentro de un contenedor, el dejarlo así no está recomendado para producción, así que deshabilitaremos esta opción, modificando esta sección
@@ -159,6 +161,7 @@ data:
   resultBackendSecretName: ~
   brokerUrlSecretName: ~
 #+END_SRC
+
 
 
 * Aplicar deployment
