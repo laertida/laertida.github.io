@@ -1,7 +1,8 @@
 #+TITLE: Deployando airflow en kubernetes con helm, usando un clúster eks en amazon e imágenes de airflow personalizadas
 #+LANGUAGE: es
-#+OPTIONS:  html-postamble:nil toc:nil author:nil
+#+OPTIONS:  html-postamble:nil toc:nil author:t date:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
+#+DATE: 2022-03-22
 
 * Acerca de
 El objetivo de este documento es mostrar las secciones clave que hay que modificar para tener un deploy productivo mínimo para airflow. 

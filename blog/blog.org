@@ -1,5 +1,8 @@
 #+TITLE: Un blog minimalista
-#+OPTIONS:  html-postamble:nil toc:nil author:nil
+#+AUTHOR: laertida
+#+EMAIL: laertida@protonmail.com
+#+LANGUAGE: es
+#+OPTIONS:  toc:nil date:t creator:t email:nil author:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
 ¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple página donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera. 
@@ -53,9 +56,21 @@ Pero esta salida esta un poco.... digamos... rúistica.
 
 Añadamos un poco de estilos. Para ello he trabajado en una simple hoja de estilos fuertemente inspirada en los estilos del *New York Times*. Puedes obtenerla [[https://raw.githubusercontent.com/laertida/laertida.github.io/main/css/main.css][aquí]].
 
+Esto puedes hacerlo añadiendo un cabecero después del título, haciendo referencia al archivo de estilos de la siguiente forma
 
+#+BEGIN_SRC org
+  ,#+TITLE: Un título de ejemplo
+  ,#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  Este es un texto de ejemplo para exportarse en org-mode
 
+  ,* Este es un cabecero de primer nivel
+  Algo de texto para disimular.
+  ,** Este es un cabecero de segundo nivel
+    1. Esta es una lista ordenada
+    2. Esta es otra lista ordenada
+#+END_SRC
 
+De esta forma tu html se verá más presentable; es decir, como éste que estás observando.
 
 * Otros recursos
 Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
@@ -69,4 +84,4 @@ Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
 
 * Footnotes
 
-[fn:1] La letra C (mayúscula) indica la tecla Ctrl. Se usa C en toda la documentación de emacs y de org mode porque es una tecla que puede configurarse a cualquier otra que quieras. 
+[fn:1] La letra C (mayúscula) indica la tecla Ctrl. Se usa C en toda la documentación de emacs y de org mode-porque es una tecla que puede configurarse a cualquier otra que quieras. 
