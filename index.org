@@ -3,7 +3,7 @@
 #+AUTHOR: laertida
 #+EMAIL: laertida@protonmail.com
 #+LANGUAGE: es
-#+OPTIONS:  toc:nil date:t creator:t email:nil author:t
+#+OPTIONS:  toc:nil date:t creator:t email:nil author:t html-style:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
 Esta es una botella con un mensaje dentro, en este mar llamado internet.

@@ -3,7 +3,7 @@
 #+EMAIL: laertida@protonmail.com
 #+DATE: 2022-03-22
 #+LANGUAGE: es
-#+OPTIONS:  toc:nil date:t creator:t email:nil author:t
+#+OPTIONS:  toc:nil date:t creator:t email:nil author:t html-style:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
 
