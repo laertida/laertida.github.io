@@ -1,6 +1,7 @@
 #+TITLE: Un blog minimalista
 #+AUTHOR: laertida
 #+EMAIL: laertida@protonmail.com
+#+DATE: 2022-04-07
 #+LANGUAGE: es
 #+OPTIONS:  toc:nil date:t creator:t email:nil author:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -71,6 +72,13 @@ Esto puedes hacerlo añadiendo un cabecero después del título, haciendo refere
 #+END_SRC
 
 De esta forma tu html se verá más presentable; es decir, como éste que estás observando.
+
+* Hints and tips
+
+Bien, ahora ya tienes la primera entrada de blog con el primer entrada de blog; pero seguro te interesarán los siguientes tips para agilizar tu trabajo.
+
+** git hook para exportar
+
 
 * Otros recursos
 Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
