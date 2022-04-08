@@ -3,7 +3,7 @@
 #+EMAIL: laertida@protonmail.com
 #+DATE: 2022-04-07
 #+LANGUAGE: es
-#+OPTIONS:  toc:nil date:t creator:t email:nil author:t
+#+OPTIONS:  toc:nil date:t creator:t email:nil author:t html-style:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
 ¿Cuándo se volvió tan complicado tener un blog? Es decir, para tener una simple página donde publicar al mundo requiere una base de datos, un servidor web, código, plugins, etcétera. 
