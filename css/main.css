@@ -31,6 +31,9 @@ p {
     color: white;
 }
 
+a:visited {
+    color: white;
+}
 span[class^='section-number']{
     display:none;
 }
