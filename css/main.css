@@ -31,8 +31,11 @@ p {
     color: white;
 }
 
+a {
+    color: #eacb8b;
+}
 a:visited {
-    color: white;
+    color: #eacb8b;
 }
 span[class^='section-number']{
     display:none;
