@@ -21,8 +21,12 @@ h1 {
     font-weight: 500;
     font-size: 2.5625rem;
     line-height: 2.8125rem;
+    color: #a3bd8d;
 }
 
+h2 {
+    color: rgba(163, 189, 141, 0.7);
+}
 
 p {
     font-weight: 600;
