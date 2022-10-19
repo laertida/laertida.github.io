@@ -37,6 +37,7 @@ p {
 
 a {
     color: #eacb8b;
+    text-decoration: none;
 }
 a:visited {
     color: #eacb8b;
