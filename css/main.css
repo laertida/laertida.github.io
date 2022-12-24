@@ -72,6 +72,10 @@ span[class^='section-number']{
     background-color: #232425;
 }
 
+.example {
+    background-color: #232425;
+}
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
 
