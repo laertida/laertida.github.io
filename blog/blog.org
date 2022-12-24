@@ -73,13 +73,6 @@ Esto puedes hacerlo añadiendo un cabecero después del título, haciendo refere
 
 De esta forma tu html se verá más presentable; es decir, como éste que estás observando.
 
-* Hints and tips
-
-Bien, ahora ya tienes la primera entrada de blog con el primer entrada de blog; pero seguro te interesarán los siguientes tips para agilizar tu trabajo.
-
-** git hook para exportar
-
-
 * Otros recursos
 Cuando tengas tiempo puedes visitar este video de alguien explicando org-mode:
 
