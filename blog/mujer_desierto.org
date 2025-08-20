@@ -1,4 +1,3 @@
-
 #+TITLE: Mujer desierto
 #+AUTHOR: laertida
 #+EMAIL: laertida@protonmail.com
