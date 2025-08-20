@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
     background-color: #232425;
     font-family: 'Source Code Pro' , monospace;
@@ -29,7 +28,7 @@ h2 {
 }
 
 p {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1rem;
     line-height: 1.25rem;
     color: white;
@@ -67,6 +66,15 @@ span[class^='section-number']{
 #postamble p{
     line-height: 0.9rem;
 }
+
+.src-org {
+    background-color: #232425;
+}
+
+.example {
+    background-color: #232425;
+}
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (max-width: 576px) {
 
